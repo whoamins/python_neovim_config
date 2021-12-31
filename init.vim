@@ -25,6 +25,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sirver/ultisnips'
+Plug 'sbdchd/neoformat'
+Plug 'neomake/neomake'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 noremap <F5> :w !python3 %<CR>
@@ -42,13 +45,15 @@ nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 
 let NERDTreeQuitOnOpen = 1
+" autocmd VimEnter * NERDTree
 nmap <F2> :NERDTreeToggle<CR>
+
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
 nmap <leader>1 :bp<CR>
 nmap <leader>2 :bn<CR>
-nmap <C-w> :bd<CR>
+" nmap <C-w> :bd<CR>
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -74,4 +79,7 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
+
+let g:neomake_python_enabled_makers = ['pylint']
+" call neomake#configure#automake('nrwi', 500)
 
