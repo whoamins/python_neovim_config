@@ -45,7 +45,6 @@ nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 
 let NERDTreeQuitOnOpen = 1
-" autocmd VimEnter * NERDTree
 nmap <F2> :NERDTreeToggle<CR>
 
 
@@ -53,7 +52,6 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
 nmap <leader>1 :bp<CR>
 nmap <leader>2 :bn<CR>
-" nmap <C-w> :bd<CR>
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -65,10 +63,8 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect,noinsert
 set shortmess+=c
 inoremap <c-c> <ESC>
-" make it fast
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
 let g:ncm2#matcher = 'substrfuzzy'
 
 
@@ -81,5 +77,4 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
 let g:neomake_python_enabled_makers = ['pylint']
-" call neomake#configure#automake('nrwi', 500)
 
